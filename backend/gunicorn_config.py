@@ -1,7 +1,7 @@
 # gunicorn_config.py
 
 # 绑定监听地址 (0.0.0.0 表示允许公网访问)
-bind = "0.0.0.0:80"
+bind = "127.0.0.1:5000"
 
 # 进程数 (Worker Processes)
 # 核心逻辑：你的机器只有 1GiB 内存。
