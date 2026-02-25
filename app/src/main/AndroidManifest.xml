@@ -14,16 +14,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.IdiomPolisher">
+
+        <!-- 主入口：从图标启动的完整 App -->
+        <activity
+            android:name=".HomeActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:theme="@style/Theme.IdiomPolisher">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- 文字处理入口：从文本选择菜单触发的快速润色弹窗 -->
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="润色"
             android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <!-- 核心代码：注册文本处理能力 -->
             <intent-filter>
                 <action android:name="android.intent.action.PROCESS_TEXT" />
                 <category android:name="android.intent.category.DEFAULT" />
